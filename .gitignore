@@ -7,3 +7,4 @@
 
 # Dist directory
 dist/
+*.code-workspace

@@ -1,0 +1,23 @@
+---
+import Social from "./Social.astro";
+
+const platform = "github";
+const username = "H-Manny";
+---
+<style>
+  .footer__inner {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+</style>
+
+<footer>
+  <p>私のプロジェクトについて詳しくは<a href={`https://www.${platform}.com/${username}`} target="_blank">{platform}</a>をご確認ください！</p>
+
+  <div class="footer__inner">
+    <Social platform="twitter" username="astrodotbuild" />
+    <Social platform="github" username="withastro" />
+    <Social platform="youtube" username="astrodotbuild" />
+  </div>
+</footer>

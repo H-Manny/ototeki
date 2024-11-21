@@ -4,13 +4,6 @@ import Social from "./Social.astro";
 const platform = "github";
 const username = "H-Manny";
 ---
-<style>
-  .footer__inner {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-</style>
 
 <footer>
   <p>私のプロジェクトについて詳しくは<a href={`https://www.${platform}.com/${username}`} target="_blank">{platform}</a>をご確認ください！</p>
@@ -25,6 +18,13 @@ const username = "H-Manny";
 <style>
   footer {
     border-block-start: solid 1px #cbdceb;
-    padding: 24px 16px;
+    padding-block: 16px 32px;
+    padding-inline: 16px;
+  }
+
+  .footer__inner {
+    display: flex;
+    gap: 1rem;
+    margin-block-start: 2rem;
   }
 </style>

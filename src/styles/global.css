@@ -5,6 +5,14 @@
 html {
   block-size: 100%;
 }
+html.dark {
+  background-color: #0d0950;
+  color: #fff;
+}
+
+.dark .nav-links a {
+  color: #fff;
+}
 
 body {
   color: #333;

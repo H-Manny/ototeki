@@ -2,6 +2,14 @@
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "preact"
+    "jsxImportSource": "preact",
+    "target": "es2020", // ターゲットのECMAScriptバージョン
+    "module": "esnext", // モジュールシステム
+    "moduleResolution": "node", // モジュール解決方法
+    "allowJs": true, // JavaScriptファイルのコンパイルを許可
+    "skipLibCheck": true, // 型定義ファイルのチェックをスキップ（パフォーマンス向上）
+    "forceConsistentCasingInFileNames": true, // ファイル名の大文字小文字を区別
+    "esModuleInterop": true,
+    "lib": ["es2020", "dom", "dom.iterable", "scripthost"] // 型定義にdomを追加
   }
 }

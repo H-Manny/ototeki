@@ -8,3 +8,6 @@
 # Dist directory
 dist/
 *.code-workspace
+src/pages/__index.astro
+.vscode/settings.json
+.prettierrc

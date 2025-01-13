@@ -13,7 +13,16 @@
     "@acab/reset.css": "^0.11.0",
     "@astrojs/preact": "^4.0.1",
     "@fontsource-variable/noto-sans-jp": "^5.1.1",
+    "@fontsource/sawarabi-gothic": "^5.1.1",
     "astro": "^5.1.5",
     "preact": "^10.25.4"
-  }
+  },
+  "devDependencies": {
+    "@types/web": "^0.0.193"
+  },
+  "description": "このチュートリアルでは、完全に機能するブログをゼロから作成しながら、Astroの主要な機能を学んでいきます！ https://docs.astro.build/ja/tutorial/0-introduction/",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

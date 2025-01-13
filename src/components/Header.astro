@@ -2,20 +2,21 @@
 import Hamburger from './Hamburger.astro';
 import Navigation from './Navigation.astro';
 import ThemeIcon from './ThemeIcon.astro';
+
+const pageTitle = "音声入力WEBアプリ";
 ---
 
 
-<header>
-  <nav>
-    <Hamburger />
-    <ThemeIcon />
-    <Navigation />
-  </nav>
+<header class="container-md py-4 px-3">
+  <div class="row">
+    <div class="col">
+      <h1 class="fw-bold mb-0">{ pageTitle }</h1>
+    </div>
+  </div>
 </header>
 
 <style>
   header {
-    border-block-end: solid 1px #cbdceb;
-    padding: 16px;
+    border-block-end: solid 1px var(--color-tertiary);
   }
 </style>

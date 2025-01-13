@@ -1,0 +1,113 @@
+---
+---
+
+<div class="row">
+  <div class="col">
+    <button
+      type="button"
+      id="startButton"
+      class="btn btn-primary btn-lg">
+      <span class="bi bi-mic-fill" role="img" aria-hidden="true"></span>
+      <span class="btn__text">音声入力スタート</span>
+    </button>
+  </div>
+</div>
+
+<style>
+#startButton {
+  --bs-btn-color: var(--color-tertiary);
+  --bs-btn-bg: var(--color-primary);
+  --bs-btn-border-color: var(--color-primary);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: #5242c3;
+  --bs-btn-hover-border-color: #5242c3;
+  --bs-btn-active-bg: #2a2169;
+  --bs-btn-active-border-color: #2a2169;
+}
+</style>
+
+<script>
+  let recognizedText = '';
+  let recognition = null;
+  let isRecording = false; // 録音中かどうかのフラグ
+
+  if ('SpeechRecognition' in window) {
+    recognition = new SpeechRecognition();
+  } else if ('webkitSpeechRecognition' in window) {
+    recognition = new webkitSpeechRecognition();
+  }
+
+  const startButton = document.getElementById('startButton');
+  const textDisplay = document.getElementById('text-display');
+  const startButtonLabel = startButton.querySelector('.btn__text');
+  const outputTextDisplay = textDisplay?.querySelector('.text-display__output'); // ?. でnullチェック
+
+  if (recognition) {
+    recognition.lang = 'ja-JP';
+    recognition.continuous = true; // 継続的な認識を有効化
+    recognition.interimResults = true; // 中間結果も取得するように設定(オプション)
+
+    /**
+     * 音声認識結果を更新・表示
+     * @param {SpeechRecognitionEvent} event - 認知結果のイベント
+     */
+    recognition.onresult = (event) => {
+      let interimTranscript = '';
+
+      // 前回の続きから結果を反復処理
+      for (let i = event.resultIndex; i < event.results.length; ++i) {
+        // 結果が確定か確認
+        if (event.results[i].isFinal) {
+          // 確定トランスクリプトをrecognizedTextに追加
+          recognizedText += event.results[i][0].transcript;
+        } else {
+          // 中間トランスクリプトをinterimTranscriptに追加
+          interimTranscript += event.results[i][0].transcript;
+        }
+      }
+
+      if (outputTextDisplay) {
+        outputTextDisplay.textContent = recognizedText + interimTranscript;
+      }
+    };
+
+    /**
+     * 音声認識開始処理 (isRecording フラグ設定、開始ボタン更新)
+     */
+    recognition.onstart = () => {
+      isRecording = true;
+      // ボタンの表示を変更
+      startButtonLabel.textContent = '音声入力中...';
+    };
+
+    recognition.onend = () => {
+      // 録音中であれば再開
+      if (isRecording) {
+        recognition.start();
+      } else {
+        // 停止したら表示を戻す
+        startButtonLabel.textContent = '音声入力スタート';
+      }
+    };
+
+    recognition.onerror = (event) => {
+      console.error('Speech recognition error:', event.error);
+      isRecording = false; // エラーが発生したら録音を停止
+      startButtonLabel.textContent = '音声入力スタート';
+    }
+
+    startButton.addEventListener('click', () => {
+      if (!isRecording) {
+        recognition.start();
+      } else {
+        recognition.stop(); // 録音中は停止
+        isRecording = false;
+      }
+    });
+  } else {
+    if (startButton instanceof HTMLButtonElement) {
+      startButton.disabled = true;
+    }
+    startButton.textContent = 'このブラウザは音声入力をサポートしていません';
+  }
+</script>

@@ -1,10 +1,25 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Greeting from '../components/Greeting';
-const pageTitle = "Home Page";
+import VoiceInput from '../components/VoiceInput.astro';
+import TextDisplay from '../components/TextDisplay.astro';
+import SpeechSynthesis from '../components/SpeechSynthesis.astro';
+import CopyButton from '../components/CopyButton.astro';
+
+const pageTitle = "音声入力WEBアプリ";
 ---
+
 <BaseLayout pageTitle={pageTitle}>
-  <h2>私の素晴らしいブログのサブタイトル</h2>
-  <Greeting messages={["どうも", "こんにちは", "初めまして", "ようこそ"]} />
-  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+  <VoiceInput client:load />
+
+  <TextDisplay />
+
+  <div class="row">
+    <div class="col">
+      <fieldset class="d-grid gap-3 d-md-flex justify-content-md-end">
+        <SpeechSynthesis client:load />
+        <CopyButton client:load />
+      </fieldset>
+    </div>
+  </div>
+
 </BaseLayout>

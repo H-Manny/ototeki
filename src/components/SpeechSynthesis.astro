@@ -1,0 +1,59 @@
+---
+---
+
+
+<button
+  type="button"
+  class="btn btn-outline-primary"
+  id="startSpeech">
+  <span class="bi bi-volume-up" role="img" aria-hidden="true"></span>
+  <span>音声読み上げ</span>
+</button>
+
+<style>
+  :where(#startSpeech) {
+    --bs-btn-color: var(--color-primary);
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: var(--color-primary);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #5242c3;
+    --bs-btn-hover-border-color: #5242c3;
+    --bs-btn-active-bg: #2a2169;
+    --bs-btn-active-border-color: #2a2169;
+  }
+
+  #startSpeech {
+    min-width: 25%;
+  }
+</style>
+
+<script>
+  /**
+   * Speak the text in the text display element.
+   * @param {string} text - The text to speak.
+   */
+  const speak = (text) => {
+    // Check if the Speech Synthesis API is supported
+    if ('speechSynthesis' in window) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      // Set the language to Japanese
+      utterance.lang = 'ja-JP';
+      // Speak the utterance
+      speechSynthesis.speak(utterance);
+    }
+  };
+
+  // Get the start speech button and text display elements
+  const startSpeechButton = document.getElementById('startSpeech');
+  const textDisplay = document.getElementById('text-display');
+
+  // Add an event listener to the start speech button
+  startSpeechButton.addEventListener('click', () => {
+    // Check if the text display element exists
+    if (textDisplay) {
+      // Speak the text in the text display element
+      speak(textDisplay.textContent);
+    }
+  });
+</script>
+

@@ -1,0 +1,59 @@
+---
+
+---
+
+<button
+  type="button"
+  id="copyButton"
+  class="btn btn-outline-primary">
+  <span class="bi bi-clipboard" role="img" aria-hidden="true"></span>
+  <span>コピー</span>
+</button>
+
+<style>
+  :where(#copyButton) {
+    --bs-btn-color: var(--color-primary);
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: var(--color-primary);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #5242c3;
+    --bs-btn-hover-border-color: #5242c3;
+    --bs-btn-active-bg: #2a2169;
+    --bs-btn-active-border-color: #2a2169;
+  }
+
+  #copyButton {
+    min-width: 25%;
+  }
+</style>
+
+<script>
+  let text = '';
+
+  const copyButton = document.getElementById('copyButton');
+  const icon = copyButton.querySelector('.bi');
+
+  const resetIcon = async () => {
+    icon.classList.remove('bi-clipboard');
+    icon.classList.add('bi-clipboard-check');
+  };
+
+  const copyText = async (text) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      alert("テキストをコピーしました！");
+      resetIcon();
+    } catch (err) {
+      console.error("コピーに失敗しました: ", err);
+    }
+  };
+
+  copyButton.addEventListener('click', () => {
+    const textDisplay = document.querySelector('#text-display');
+    const outputTextDisplay = textDisplay.querySelector('.text-display__output');
+
+    if (textDisplay) {
+      copyText(outputTextDisplay.textContent);
+    }
+  });
+</script>

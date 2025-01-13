@@ -9,15 +9,15 @@ const pageTitle = "音声入力WEBアプリ";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <VoiceInput client:load />
+  <VoiceInput />
 
   <TextDisplay />
 
   <div class="row">
     <div class="col">
       <fieldset class="d-grid gap-3 d-md-flex justify-content-md-end">
-        <SpeechSynthesis client:load />
-        <CopyButton client:load />
+        <SpeechSynthesis />
+        <CopyButton />
       </fieldset>
     </div>
   </div>

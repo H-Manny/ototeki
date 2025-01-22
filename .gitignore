@@ -11,3 +11,4 @@ dist/
 src/pages/__index.astro
 .vscode/settings.json
 .prettierrc
+*.lockb

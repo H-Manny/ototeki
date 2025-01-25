@@ -14,11 +14,11 @@
     "@astrojs/preact": "^4.0.3",
     "@fontsource-variable/noto-sans-jp": "^5.1.1",
     "@fontsource/sawarabi-gothic": "^5.1.1",
-    "astro": "^5.1.8",
+    "astro": "^5.1.9",
     "preact": "^10.25.4"
   },
   "devDependencies": {
-    "@types/web": "^0.0.197"
+    "@types/web": "^0.0.198"
   },
   "description": "このチュートリアルでは、完全に機能するブログをゼロから作成しながら、Astroの主要な機能を学んでいきます！ https://docs.astro.build/ja/tutorial/0-introduction/",
   "main": "index.js",

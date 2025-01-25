@@ -28,32 +28,47 @@
 </style>
 
 <script>
-  let text = '';
-
   const copyButton = document.getElementById('copyButton');
   const icon = copyButton.querySelector('.bi');
 
   const resetIcon = async () => {
-    icon.classList.remove('bi-clipboard');
-    icon.classList.add('bi-clipboard-check');
+    if (icon) {
+      icon.classList.remove('bi-clipboard');
+      icon.classList.add('bi-clipboard-check');
+    }
   };
 
   const copyText = async (text) => {
     try {
-      await navigator.clipboard.writeText(text);
-      alert("テキストをコピーしました！");
-      resetIcon();
+      if (text) {
+        await navigator.clipboard.writeText(text);
+        alert("テキストをコピーしました！");
+        resetIcon();
+      } else {
+        alert("コピーするテキストがありません！");
+      }
     } catch (err) {
       console.error("コピーに失敗しました: ", err);
     }
   };
 
+  /**
+   * Handle the click event on the copy button.
+   */
   copyButton.addEventListener('click', () => {
     const textDisplay = document.querySelector('#text-display');
-    const outputTextDisplay = textDisplay.querySelector('.text-display__output');
+    const outputTextDisplay = textDisplay?.querySelector('.text-display__output');
 
-    if (textDisplay) {
+    if (textDisplay && outputTextDisplay?.textContent) {
+      // Copy the text to the clipboard
       copyText(outputTextDisplay.textContent);
+    } else {
+      // Reset the icon when there is no text to copy
+      if (icon) {
+        icon.classList.remove('bi-clipboard-check');
+        icon.classList.add('bi-clipboard');
+      }
+      alert('コピーできるテキストがみつかりません。お手数ですが、もう一度ご確認ください。');
     }
   });
 </script>

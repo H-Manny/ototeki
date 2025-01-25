@@ -4,12 +4,14 @@ import VoiceInput from '../components/VoiceInput.astro';
 import TextDisplay from '../components/TextDisplay.astro';
 import SpeechSynthesis from '../components/SpeechSynthesis.astro';
 import CopyButton from '../components/CopyButton.astro';
+import Alert from '../components/Alert .astro';
 
 const pageTitle = "音声入力WEBアプリ";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <p class="fs-5">音声入力をご利用いただくには、ブラウザのマイク設定を許可してください。</p>
+
+  <Alert />
 
   <VoiceInput />
 

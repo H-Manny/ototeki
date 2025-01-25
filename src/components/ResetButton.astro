@@ -1,0 +1,36 @@
+---
+---
+
+<button
+  type="button"
+  id="resetButton"
+  class="btn flex-grow-0"
+  aria-label="リセット">
+  <span class="bi bi-x-lg" role="img" aria-hidden="true"></span>
+</button>
+
+<style>
+  :where(#resetButton) {
+    --bs-btn-color: var(--color-accent);
+    --bs-btn-font-weight: bold;
+    --bs-btn-hover-color: #ff6415;
+    --bs-btn-active-color: #eb4f00;
+  }
+
+  #resetButton {
+    border: unset;
+  }
+</style>
+
+<script>
+  const resetButton = document.getElementById('resetButton');
+
+  resetButton.addEventListener('click', () => {
+    const textDisplay = document.querySelector('#text-display');
+    const outputTextDisplay = textDisplay.querySelector('.text-display__output');
+
+    if (textDisplay) {
+      outputTextDisplay.textContent = '';
+    }
+  });
+</script>

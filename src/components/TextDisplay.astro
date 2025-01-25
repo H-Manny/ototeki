@@ -1,4 +1,5 @@
 ---
+import ResetButton from './ResetButton.astro';
 ---
 
 <div class="row">
@@ -6,8 +7,12 @@
 
     <div class="my-5">
       <h2 class="mb-3">入力したテキスト</h2>
-      <div id="text-display" class="text-display rounded w-auto p-3 bg-white">
-        <p class="text-display__output m-0"></p>
+      <div class="hstack text-display-container rounded p-2 column-gap-3">
+        <div id="text-display" class="text-display p-3 flex-grow-1">
+          <p class="text-display__output m-0"></p>
+        </div>
+
+        <ResetButton />
       </div>
     </div>
 
@@ -15,7 +20,8 @@
 </div>
 
 <style>
-  .text-display {
+  .text-display-container {
     border: solid 2px var(--color-accent);
+    background-color: #fff;
   }
 </style>

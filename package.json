@@ -20,9 +20,13 @@
   "devDependencies": {
     "@types/web": "^0.0.198"
   },
-  "description": "このチュートリアルでは、完全に機能するブログをゼロから作成しながら、Astroの主要な機能を学んでいきます！ https://docs.astro.build/ja/tutorial/0-introduction/",
+  "description": "音声入力とテキスト変換のシンプルなデモ",
   "main": "index.js",
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Hiroyuki Maniwa",
+  "license": "MIT",
+  "browserslist": [
+    "defaults and fully supports es6-module",
+    "maintained node versions"
+  ]
 }

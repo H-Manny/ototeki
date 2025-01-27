@@ -9,19 +9,17 @@
   --color-accent: #ff7f3e;
 }
 
-html {
-  block-size: 100dvh;
-}
-
 body {
   color: var(--color-primary);
   font-family: 'Sawarabi Gothic', sans-serif;
   font-size: 17px;
   line-height: 1.6;
   background-color: var(--color-tertiary);
-  min-block-size: 100%;
   inline-size: min(100% - 1rem, 80ch);
+  min-block-size: 100dvh;
   margin-inline: auto;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 h1,

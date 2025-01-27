@@ -1,30 +1,23 @@
 ---
-import Social from "./Social.astro";
-
-const platform = "github";
+const platform = "Github";
 const username = "H-Manny";
 ---
 
-<footer>
-  <p>私のプロジェクトについて詳しくは<a href={`https://www.${platform}.com/${username}`} target="_blank">{platform}</a>をご確認ください！</p>
-
-  <div class="footer__inner">
-    <Social platform="twitter" username="astrodotbuild" />
-    <Social platform="github" username="withastro" />
-    <Social platform="youtube" username="astrodotbuild" />
+<footer class="container-md py-4 px-3">
+  <div class="row">
+    <div class="col">
+      <p class="text-center">
+        <small>&copy;2025 <a
+          href={`https://www.${platform}.com/${username}`}
+          target="_blank">{username}</a
+        > - 試作版</small>
+      </p>
+    </div>
   </div>
 </footer>
 
 <style>
   footer {
-    border-block-start: solid 1px #cbdceb;
-    padding-block: 16px 32px;
-    padding-inline: 16px;
-  }
-
-  .footer__inner {
-    display: flex;
-    gap: 1rem;
-    margin-block-start: 2rem;
+    border-block-start: solid 1px var(--color-secondary);
   }
 </style>

@@ -1,5 +1,5 @@
 # 音声入力 WEBアプリ『オトテキ』 (試作版)
-![GitHub License](https://img.shields.io/github/license/H-Manny/ototeki?style=for-the-badge)
+![GitHub License](https://img.shields.io/github/license/H-Manny/ototeki)
 ![Static Badge](https://img.shields.io/badge/Astro-black?style=for-the-badge&logo=astro)
 ![Static Badge](https://img.shields.io/badge/Bootstrap-black?style=for-the-badge&logo=bootstrap)
 

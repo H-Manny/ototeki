@@ -39,6 +39,7 @@
 
   const startButton = document.getElementById('startButton');
   const textDisplay = document.getElementById('text-display');
+  const resetButton = document.getElementById('resetButton');
   const startButtonLabel = startButton.querySelector('.btn__text');
   const outputTextDisplay = textDisplay?.querySelector('.text-display__output'); // ?. でnullチェック
 
@@ -104,6 +105,23 @@
         isRecording = false;
       }
     });
+
+    resetButton.addEventListener('click', () => {
+      recognizedText = '';
+      isRecording = false;
+      // 念の為、停止してから
+      recognition.stop();
+      // 状態をリセット
+      recognition.lang = 'ja-JP';
+      recognition.continuous = true;
+      recognition.interimResults = true;
+
+      if (outputTextDisplay) {
+        outputTextDisplay.textContent = ''; // テキスト表示エリアをクリア
+      }
+      startButtonLabel.textContent = '音声入力スタート';
+    });
+
   } else {
     if (startButton instanceof HTMLButtonElement) {
       startButton.disabled = true;

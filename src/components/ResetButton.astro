@@ -25,16 +25,3 @@
     }
   }
 </style>
-
-<script>
-  const resetButton = document.getElementById('resetButton');
-
-  resetButton.addEventListener('click', () => {
-    const textDisplay = document.querySelector('#text-display');
-    const outputTextDisplay = textDisplay.querySelector('.text-display__output');
-
-    if (textDisplay) {
-      outputTextDisplay.textContent = '';
-    }
-  });
-</script>

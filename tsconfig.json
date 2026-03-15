@@ -10,6 +10,7 @@
     "skipLibCheck": true, // 型定義ファイルのチェックをスキップ（パフォーマンス向上）
     "forceConsistentCasingInFileNames": true, // ファイル名の大文字小文字を区別
     "esModuleInterop": true,
-    "lib": ["es2020", "dom", "dom.iterable", "scripthost"] // 型定義にdomを追加
+    "lib": ["es2020", "dom", "dom.iterable", "scripthost"], // 型定義にdomを追加
+    "ignoreDeprecations": "6.0" // 非推奨の警告を無視
   }
 }

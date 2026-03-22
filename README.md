@@ -1,8 +1,12 @@
 # 音声入力 WEBアプリ『オトテキ』 (試作版)
 
 ![GitHub License](https://img.shields.io/github/license/H-Manny/ototeki)
-![Static Badge](https://img.shields.io/badge/Astro-black?style=for-the-badge&logo=astro)
-![Static Badge](https://img.shields.io/badge/Bootstrap-black?style=for-the-badge&logo=bootstrap)
+![Static Badge](https://img.shields.io/badge/google_gemini-black?logo=googlegemini&logoSize=auto)
+![Astro Version](https://img.shields.io/github/package-json/dependency-version/H-Manny/ototeki/astro?logo=astro&color=BC52EE)
+![Vite Version](https://img.shields.io/github/package-json/dependency-version/H-Manny/ototeki/dev/vite?logo=vite&color=646CFF)
+![Vite Version](https://img.shields.io/github/package-json/dependency-version/H-Manny/ototeki/dev/vite-plus?logo=vite&color=646CFF)
+![Bootstrap 5.3.0](https://img.shields.io/badge/bootstrap-5.3.0-7952B3?logo=bootstrap&logoColor=white)
+![Bootstrap Icons 1.11.3](https://img.shields.io/badge/bootstrap--icons-1.11.3-7952B3?logo=bootstrap)
 
 ## 概要
 
@@ -27,7 +31,7 @@
 
 ## 開発環境
 
-- Astro (ver.5.1.9)
+- Astro (ver.6.0.8)
 - Bootstrap (ver.5.3.0) CDN
-- Javascript
-- Gemini 2.0 Flash
+- Vite Plus
+- Gemini 3

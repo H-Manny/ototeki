@@ -1,32 +1,42 @@
 {
   "name": "ototeki",
-  "type": "module",
   "version": "0.0.1",
+  "description": "音声入力とテキスト変換のシンプルなデモ",
+  "keywords": [],
+  "license": "MIT",
+  "author": "Hiroyuki Maniwa",
+  "type": "module",
+  "main": "index.js",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "prepare": "vp config"
   },
   "dependencies": {
     "@acab/reset.css": "^0.11.0",
-    "@astrojs/preact": "^5.0.0",
+    "@astrojs/preact": "^5.0.2",
     "@fontsource-variable/noto-sans-jp": "^5.2.10",
     "@fontsource/sawarabi-gothic": "^5.2.9",
-    "astro": "^6.0.4",
+    "astro": "^6.0.8",
     "preact": "^10.29.0"
   },
   "devDependencies": {
-    "@types/web": "^0.0.342"
+    "@types/web": "^0.0.342",
+    "vite": "npm:@voidzero-dev/vite-plus-core@^0.1.13",
+    "vite-plus": "latest"
   },
-  "description": "音声入力とテキスト変換のシンプルなデモ",
-  "main": "index.js",
-  "keywords": [],
-  "author": "Hiroyuki Maniwa",
-  "license": "MIT",
   "browserslist": [
     "defaults and fully supports es6-module",
     "maintained node versions"
-  ]
+  ],
+  "packageManager": "pnpm@10.32.1",
+  "pnpm": {
+    "overrides": {
+      "vite": "npm:@voidzero-dev/vite-plus-core@latest",
+      "vitest": "npm:@voidzero-dev/vite-plus-test@latest"
+    }
+  }
 }

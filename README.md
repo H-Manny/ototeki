@@ -1,16 +1,20 @@
 # 音声入力 WEBアプリ『オトテキ』 (試作版)
+
 ![GitHub License](https://img.shields.io/github/license/H-Manny/ototeki)
 ![Static Badge](https://img.shields.io/badge/Astro-black?style=for-the-badge&logo=astro)
 ![Static Badge](https://img.shields.io/badge/Bootstrap-black?style=for-the-badge&logo=bootstrap)
 
 ## 概要
+
 **音声入力API（Web Speech APIなど）** を用いた音声入力が、どのようにテキストに変換されるのかを、手軽に体験できる Web アプリケーションです。
 
 ### 特徴
+
 - ブラウザのマイク機能を利用した音声入力が可能です。
 - 音声認識の精度や変換結果を簡単に確認できます。
 
 ### 注意点
+
 音声入力をご利用いただくには、ブラウザのマイクへのアクセスを許可する必要があります。<br>
 設定方法は以下のとおりです。
 

@@ -9,6 +9,7 @@
 dist/
 *.code-workspace
 src/pages/__index.astro
-.vscode/settings.json
+.vscode/
+.vite-hooks/
 .prettierrc
 *.lockb

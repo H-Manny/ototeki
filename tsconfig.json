@@ -5,7 +5,6 @@
     "jsxImportSource": "preact",
     "target": "es2020", // ターゲットのECMAScriptバージョン
     "module": "esnext", // モジュールシステム
-    "moduleResolution": "node", // モジュール解決方法
     "allowJs": true, // JavaScriptファイルのコンパイルを許可
     "skipLibCheck": true, // 型定義ファイルのチェックをスキップ（パフォーマンス向上）
     "forceConsistentCasingInFileNames": true, // ファイル名の大文字小文字を区別

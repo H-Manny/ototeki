@@ -16,11 +16,9 @@
     "prepare": "vp config"
   },
   "dependencies": {
-    "@acab/reset.css": "^0.11.0",
     "@astrojs/preact": "^5.1.2",
-    "@fontsource-variable/noto-sans-jp": "^5.2.10",
-    "@fontsource/sawarabi-gothic": "^5.2.9",
-    "astro": "^6.2.0",
+    "astro": "^6.2.1",
+    "kiso.css": "^1.2.4",
     "preact": "^10.29.1"
   },
   "devDependencies": {

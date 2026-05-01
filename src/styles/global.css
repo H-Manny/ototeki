@@ -11,7 +11,6 @@
 
 body {
   color: var(--color-primary);
-  font-family: 'Sawarabi Gothic', sans-serif;
   font-size: 17px;
   line-height: 1.6;
   background-color: var(--color-tertiary);
@@ -22,8 +21,7 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 
-h1,
-h2 {
+:is(h1, h2) {
   color: var(--color-primary);
   user-select: none;
 }

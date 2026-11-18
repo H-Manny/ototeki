@@ -31,7 +31,7 @@
 
 ## 開発環境
 
-- Astro (ver.6.0.8)
+- Astro (ver.7.4.12)
 - Bootstrap (ver.5.3.0) CDN
 - Vite Plus
 - Gemini 3
